@@ -6,13 +6,13 @@ Candito: Victor Ramos
 
 ### Bancos de Dados e API:
 
-Apenas utilize o comando `docker compose up -d --build` no terminal com o Docker Desktop aberto
+Apenas utilize o comando `docker compose up -d --build` no terminal na raiz do projeto com o Docker Desktop aberto
 
 ### Aplicação ETL:
 
 Utilizaremos o venv para controle das dependências do projeto.
 
-Para usar o venv, utilize os seguintes comando no terminal:
+Para usar o venv, utilize os seguintes comando no terminal na raiz do projeto:
 
 - `py -m venv venv` (Iniciar o venv no projeto)
 
