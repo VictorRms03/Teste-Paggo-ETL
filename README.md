@@ -22,7 +22,7 @@ Para usar o venv, utilize os seguintes comando no terminal na raiz do projeto:
 
 - `python etl/main.py` (Executar o ETL)
 
-## Periodos de dados contidos no Banco de Dados Fonte:
+## Períodos de dados contidos no Banco de Dados Fonte:
 
 - timestamp: 2025-04-01 00:00:00 a 2025-04-11 00:00:00
 - wind_speed: 0 a 25
