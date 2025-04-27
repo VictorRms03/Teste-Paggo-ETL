@@ -1,0 +1,31 @@
+services:
+  fonte-db:
+    image: postgres:17
+    container_name: fonte-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: fonte_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db/init_fonte.sql:/docker-entrypoint-initdb.d/init.sql
+
+  alvo-db:
+    image: postgres:17
+    container_name: alvo-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: alvo_db
+    ports:
+      - "5434:5432"
+
+  backend:
+    build: ./backend
+    container_name: backend
+    depends_on:
+      - fonte-db
+    ports:
+      - "8000:8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
