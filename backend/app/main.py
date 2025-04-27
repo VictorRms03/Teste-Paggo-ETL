@@ -23,7 +23,7 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/data/")
+@app.get("/data")
 def get_data(start_time: datetime.datetime, end_time: datetime.datetime, variables: List[str] = Query(...), db: Session = Depends(get_db)):
 
     columns = ["timestamp"] + variables
